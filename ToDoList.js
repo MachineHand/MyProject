@@ -12,8 +12,14 @@ function ToDoListPlus() {
             tr.appendChild(td);
         }
         else {//텍스트 값 넣기
-            let txtValue = document.getElementById('txt').value
-            let txt = document.createTextNode(txtValue);//.innerHTML
+            let txtValue = document.getElementById('txt')
+            let txtValue1=txtValue.value;
+            let txt = document.createTextNode(txtValue1);//.innerHTML
+            if (!txtValue1) {
+                alert('내용을 입력해주세요.');
+                txtValue.focus();
+                return false;
+                }
             td.appendChild(txt);
             tr.appendChild(td);
         }
